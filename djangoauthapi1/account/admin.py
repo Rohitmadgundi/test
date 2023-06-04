@@ -1,6 +1,12 @@
 from django.contrib import admin
 from account.models import User
 from django.contrib.auth.admin import UserAdmin as BaseUserAdmin
+from .models import Contact
+
+@admin.register(Contact)
+class ContactAdmin(admin.ModelAdmin):
+  list_display = ['id','firstName','lastName','email','message']
+
 
 class UserModelAdmin(BaseUserAdmin):
   # The fields to be used in displaying the User model.

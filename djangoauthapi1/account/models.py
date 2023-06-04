@@ -72,6 +72,10 @@ class User(AbstractBaseUser):
       # Simplest possible answer: All admins are staff
       return self.is_admin
 
-
+class Contact(models.Model):
+    firstName = models.CharField(max_length=50)
+    lastName = models.CharField(max_length=50)
+    email = models.CharField(max_length=50)
+    message = models.CharField(max_length=100)
 
 
